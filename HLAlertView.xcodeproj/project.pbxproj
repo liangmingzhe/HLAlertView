@@ -31,14 +31,14 @@
 			containerPortal = EE4D7505245981D2004C7062 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EE4D750C245981D2004C7062;
-			remoteInfo = HLAlertController;
+			remoteInfo = HLAlertView;
 		};
 		EE4D7534245981D6004C7062 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EE4D7505245981D2004C7062 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EE4D750C245981D2004C7062;
-			remoteInfo = HLAlertController;
+			remoteInfo = HLAlertView;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -198,7 +198,7 @@
 			dependencies = (
 			);
 			name = HLAlertView;
-			productName = HLAlertController;
+			productName = HLAlertView;
 			productReference = EE4D750D245981D2004C7062 /* HLAlertView.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -216,7 +216,7 @@
 				EE4D752A245981D6004C7062 /* PBXTargetDependency */,
 			);
 			name = HLAlertViewTests;
-			productName = HLAlertControllerTests;
+			productName = HLAlertViewTests;
 			productReference = EE4D7528245981D6004C7062 /* HLAlertViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -234,7 +234,7 @@
 				EE4D7535245981D6004C7062 /* PBXTargetDependency */,
 			);
 			name = HLAlertViewUITests;
-			productName = HLAlertControllerUITests;
+			productName = HLAlertViewUITests;
 			productReference = EE4D7533245981D6004C7062 /* HLAlertViewUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};

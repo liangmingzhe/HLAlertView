@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "HLAlertView"
-  spec.version      = "0.0.4"
+  spec.version      = "0.0.5"
   spec.summary      = "HLAlertView"
 
   # This description is used to generate tags and improve search results.
