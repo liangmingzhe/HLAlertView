@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "HLAlertView"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.3"
   spec.summary      = "HLAlertView"
 
   # This description is used to generate tags and improve search results.
@@ -64,7 +64,7 @@ Pod::Spec.new do |spec|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # spec.platform     = :ios
+  spec.platform     = :ios
   # spec.platform     = :ios, "5.0"
 
   #  When using multiple platforms
@@ -95,7 +95,7 @@ Pod::Spec.new do |spec|
   spec.exclude_files = "HLAlertView/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
-  spec.frameworks  = "UIKit","AVFoundation","Foundation".
+  spec.frameworks  = "UIKit","AVFoundation","Foundation"
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
