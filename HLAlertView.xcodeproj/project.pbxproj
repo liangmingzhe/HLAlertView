@@ -485,7 +485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYFPU28B7N;
-				INFOPLIST_FILE = /Users/lmz/Gits/HLAlertController/HLAlertControllerDemo/Info.plist;
+				INFOPLIST_FILE = /Users/lmz/Gits/HLAlertView/HLAlertControllerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,7 +502,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYFPU28B7N;
-				INFOPLIST_FILE = /Users/lmz/Gits/HLAlertController/HLAlertControllerDemo/Info.plist;
+				INFOPLIST_FILE = /Users/lmz/Gits/HLAlertView/HLAlertControllerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
