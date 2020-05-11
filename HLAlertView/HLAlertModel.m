@@ -119,7 +119,7 @@
         _bottom  = 15.0f;
         _left = -15.0f;
         _right = 0.0f;
-        _autoRelation = NO;
+        _autoRelation = YES;
     }
     return self;
 }

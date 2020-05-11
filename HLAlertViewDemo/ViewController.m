@@ -234,7 +234,6 @@
         constraint.left = 20;
         constraint.right = -15.5;
         constraint.height = 50;
-        constraint.autoRelation = NO;
         labelModel.textFont = [UIFont fontWithName:@"PingFang-SC-Regular" size:13.0f];
         labelModel.textAlignment = NSTextAlignmentLeft;
     }];

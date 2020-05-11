@@ -190,8 +190,8 @@
             [self addSubview:label];
             bTopBorder = bTopBorder + model.top;
             
-            NSLayoutConstraint *topBorder = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:model.autoRelation == YES?model.top:bTopBorder];
-            if (model.autoRelation == NO) {
+            NSLayoutConstraint *topBorder = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:model.autoRelation == NO?model.top:bTopBorder];
+            if (model.autoRelation == YES) {
                 bTopBorder = bTopBorder + model.height;
             }
 
@@ -209,8 +209,8 @@
             UITextView *textView = [item valueForKey:@"textView"];
             [self addSubview:textView];
             bTopBorder = bTopBorder + model.top;
-            NSLayoutConstraint *topBorder = [NSLayoutConstraint constraintWithItem:textView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:model.autoRelation == YES?model.top:bTopBorder];
-             if (model.autoRelation == NO) {
+            NSLayoutConstraint *topBorder = [NSLayoutConstraint constraintWithItem:textView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:model.autoRelation == NO?model.top:bTopBorder];
+             if (model.autoRelation == YES) {
                  bTopBorder = bTopBorder + model.height;
              }
             
@@ -245,8 +245,8 @@
             Constraint *model = [item valueForKey:@"constraint"];
             [self addSubview:imageView];
             bTopBorder = bTopBorder + model.top;
-            NSLayoutConstraint *topBorder = [NSLayoutConstraint constraintWithItem:imageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:model.autoRelation == YES?model.top:bTopBorder];
-            if (model.autoRelation == NO) {
+            NSLayoutConstraint *topBorder = [NSLayoutConstraint constraintWithItem:imageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:model.autoRelation == NO?model.top:bTopBorder];
+            if (model.autoRelation == YES) {
                 bTopBorder = bTopBorder + model.height;
             }
 
@@ -267,8 +267,8 @@
             [self addSubview:button];
             
             bTopBorder = bTopBorder + model.top;
-            NSLayoutConstraint *topBorder = [NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:model.autoRelation == YES?model.top:bTopBorder];
-            if (model.autoRelation == NO) {
+            NSLayoutConstraint *topBorder = [NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:model.autoRelation == NO?model.top:bTopBorder];
+            if (model.autoRelation == YES) {
                 bTopBorder = bTopBorder + model.height;
             }
 
