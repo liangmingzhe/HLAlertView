@@ -15,8 +15,8 @@
 		EE4D751D245981D6004C7062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE4D751C245981D6004C7062 /* Assets.xcassets */; };
 		EE4D7520245981D6004C7062 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE4D751E245981D6004C7062 /* LaunchScreen.storyboard */; };
 		EE4D7523245981D6004C7062 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4D7522245981D6004C7062 /* main.m */; };
-		EE4D752D245981D6004C7062 /* HLAlertControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4D752C245981D6004C7062 /* HLAlertControllerTests.m */; };
-		EE4D7538245981D6004C7062 /* HLAlertControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4D7537245981D6004C7062 /* HLAlertControllerUITests.m */; };
+		EE4D752D245981D6004C7062 /* HLAlertViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4D752C245981D6004C7062 /* HLAlertViewTests.m */; };
+		EE4D7538245981D6004C7062 /* HLAlertViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4D7537245981D6004C7062 /* HLAlertViewUITests.m */; };
 		EE4D75472459820C004C7062 /* HLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4D75462459820C004C7062 /* HLAlertView.m */; };
 		EE6CB7942462B3EC00B903B0 /* HLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6CB7932462B3EC00B903B0 /* HLTextField.m */; };
 		EE70C1382463ECC8004C2420 /* HLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE70C1372463ECC8004C2420 /* HLImageView.m */; };
@@ -59,10 +59,10 @@
 		EE4D7521245981D6004C7062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE4D7522245981D6004C7062 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EE4D7528245981D6004C7062 /* HLAlertViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLAlertViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE4D752C245981D6004C7062 /* HLAlertControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLAlertControllerTests.m; sourceTree = "<group>"; };
+		EE4D752C245981D6004C7062 /* HLAlertViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLAlertViewTests.m; sourceTree = "<group>"; };
 		EE4D752E245981D6004C7062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE4D7533245981D6004C7062 /* HLAlertViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLAlertViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE4D7537245981D6004C7062 /* HLAlertControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLAlertControllerUITests.m; sourceTree = "<group>"; };
+		EE4D7537245981D6004C7062 /* HLAlertViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLAlertViewUITests.m; sourceTree = "<group>"; };
 		EE4D7539245981D6004C7062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE4D75452459820C004C7062 /* HLAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLAlertView.h; sourceTree = "<group>"; };
 		EE4D75462459820C004C7062 /* HLAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLAlertView.m; sourceTree = "<group>"; };
@@ -107,9 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				EEBED7BD2468EC86007E7F2C /* HLAlertView */,
-				EE4D750F245981D2004C7062 /* HLAlertControllerDemo */,
-				EE4D752B245981D6004C7062 /* HLAlertControllerTests */,
-				EE4D7536245981D6004C7062 /* HLAlertControllerUITests */,
+				EE4D750F245981D2004C7062 /* HLAlertViewDemo */,
+				EE4D752B245981D6004C7062 /* HLAlertViewTests */,
+				EE4D7536245981D6004C7062 /* HLAlertViewUITests */,
 				EE4D750E245981D2004C7062 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,7 +124,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EE4D750F245981D2004C7062 /* HLAlertControllerDemo */ = {
+		EE4D750F245981D2004C7062 /* HLAlertViewDemo */ = {
 			isa = PBXGroup;
 			children = (
 				EE4D7510245981D2004C7062 /* AppDelegate.h */,
@@ -136,25 +136,25 @@
 				EE4D7522245981D6004C7062 /* main.m */,
 				EE4D7521245981D6004C7062 /* Info.plist */,
 			);
-			path = HLAlertControllerDemo;
+			path = HLAlertViewDemo;
 			sourceTree = "<group>";
 		};
-		EE4D752B245981D6004C7062 /* HLAlertControllerTests */ = {
+		EE4D752B245981D6004C7062 /* HLAlertViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				EE4D752C245981D6004C7062 /* HLAlertControllerTests.m */,
+				EE4D752C245981D6004C7062 /* HLAlertViewTests.m */,
 				EE4D752E245981D6004C7062 /* Info.plist */,
 			);
-			path = HLAlertControllerTests;
+			path = HLAlertViewTests;
 			sourceTree = "<group>";
 		};
-		EE4D7536245981D6004C7062 /* HLAlertControllerUITests */ = {
+		EE4D7536245981D6004C7062 /* HLAlertViewUITests */ = {
 			isa = PBXGroup;
 			children = (
-				EE4D7537245981D6004C7062 /* HLAlertControllerUITests.m */,
+				EE4D7537245981D6004C7062 /* HLAlertViewUITests.m */,
 				EE4D7539245981D6004C7062 /* Info.plist */,
 			);
-			path = HLAlertControllerUITests;
+			path = HLAlertViewUITests;
 			sourceTree = "<group>";
 		};
 		EEBED7BD2468EC86007E7F2C /* HLAlertView */ = {
@@ -330,7 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE4D752D245981D6004C7062 /* HLAlertControllerTests.m in Sources */,
+				EE4D752D245981D6004C7062 /* HLAlertViewTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE4D7538245981D6004C7062 /* HLAlertControllerUITests.m in Sources */,
+				EE4D7538245981D6004C7062 /* HLAlertViewUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,12 +485,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYFPU28B7N;
-				INFOPLIST_FILE = /Users/lmz/Gits/HLAlertView/HLAlertControllerDemo/Info.plist;
+				INFOPLIST_FILE = /Users/lmz/Gits/HLAlertView/HLAlertViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lmz.HLAlertController;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lmz.HLAlertView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -502,12 +502,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYFPU28B7N;
-				INFOPLIST_FILE = /Users/lmz/Gits/HLAlertView/HLAlertControllerDemo/Info.plist;
+				INFOPLIST_FILE = /Users/lmz/Gits/HLAlertView/HLAlertViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lmz.HLAlertController;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lmz.HLAlertView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -519,14 +519,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYFPU28B7N;
-				INFOPLIST_FILE = HLAlertControllerTests/Info.plist;
+				INFOPLIST_FILE = HLAlertViewTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.manniu.MzThemeMaster.HLAlertControllerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manniu.MzThemeMaster.HLAlertViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HLAlertView.app/HLAlertView";
@@ -539,14 +539,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYFPU28B7N;
-				INFOPLIST_FILE = HLAlertControllerTests/Info.plist;
+				INFOPLIST_FILE = HLAlertViewTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.manniu.MzThemeMaster.HLAlertControllerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manniu.MzThemeMaster.HLAlertViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HLAlertView.app/HLAlertView";
@@ -558,16 +558,16 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYFPU28B7N;
-				INFOPLIST_FILE = HLAlertControllerUITests/Info.plist;
+				INFOPLIST_FILE = HLAlertViewUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.manniu.MzThemeMaster.HLAlertControllerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manniu.MzThemeMaster.HLAlertViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HLAlertController;
+				TEST_TARGET_NAME = HLAlertView;
 			};
 			name = Debug;
 		};
@@ -576,16 +576,16 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYFPU28B7N;
-				INFOPLIST_FILE = HLAlertControllerUITests/Info.plist;
+				INFOPLIST_FILE = HLAlertViewUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.manniu.MzThemeMaster.HLAlertControllerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manniu.MzThemeMaster.HLAlertViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HLAlertController;
+				TEST_TARGET_NAME = HLAlertView;
 			};
 			name = Release;
 		};

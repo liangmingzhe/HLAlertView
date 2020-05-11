@@ -16,7 +16,7 @@
 #import "HMLabel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HLAlertController : UIView
+@interface HLAlertView : UIView
 @property (nonatomic,assign)BOOL shadowAction;
 
 + (id)alertWithTitle:(nullable NSString *)title message:(nullable NSString *)message;

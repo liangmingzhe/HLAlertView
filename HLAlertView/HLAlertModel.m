@@ -1,6 +1,6 @@
 //
 //  HLAlertModel.m
-//  HLAlertController
+//  HLAlertView
 //
 //  Created by 梁明哲 on 2020/5/4.
 //  Copyright © 2020 Tony. All rights reserved.

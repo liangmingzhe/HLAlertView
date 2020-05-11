@@ -1,6 +1,6 @@
 //
 //  HLButton.m
-//  HLAlertController
+//  HLAlertView
 //
 //  Created by benjaminlmz@qq.com on 2020/5/8.
 //  Copyright © 2020 Tony. All rights reserved.

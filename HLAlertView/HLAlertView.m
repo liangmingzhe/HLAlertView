@@ -13,7 +13,7 @@
 #define kHeight [UIScreen mainScreen].bounds.size.height
 
 #define kBKTag 101001
-@interface HLAlertController ()<UITextFieldDelegate>
+@interface HLAlertView ()<UITextFieldDelegate>
 @property (nonatomic ,strong) HLPopupView *popView;
 
 @property (nonatomic ,strong) NSMutableArray *actionArray;
@@ -26,14 +26,14 @@
 @property (nonatomic ,strong) NSLayoutConstraint *popViewHeightConstraint;
 @property (nonatomic ,assign) CGFloat mul;
 @end
-static HLAlertController *hAC = nil;
+static HLAlertView *hAC = nil;
 
-@implementation HLAlertController
+@implementation HLAlertView
 
 //初始化
 + (instancetype)alertWithTitle:(nullable NSString *)title message:(nullable NSString *)message {
     if (hAC == nil) {
-        hAC = [[HLAlertController alloc] init];
+        hAC = [[HLAlertView alloc] init];
         [hAC setTranslatesAutoresizingMaskIntoConstraints:NO];
         hAC.tag = kBKTag;
         hAC.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.3];   //背景颜色
@@ -91,9 +91,9 @@ static HLAlertController *hAC = nil;
         HLButtonModel *buttonModel = [object valueForKey:@"buttonModel"];
         UIButton *button = [object valueForKey:@"button"];
         [button setTitleColor:buttonModel.textColor forState:UIControlStateNormal];
-        [button setBackgroundImage:[HLAlertController imageWithColor:buttonModel.normalColor] forState:UIControlStateNormal];
-        [button setBackgroundImage:[HLAlertController imageWithColor:buttonModel.highlightedColor] forState:UIControlStateHighlighted];
-        [button setBackgroundImage:[HLAlertController imageWithColor:buttonModel.disabledColor] forState:UIControlStateDisabled];
+        [button setBackgroundImage:[HLAlertView imageWithColor:buttonModel.normalColor] forState:UIControlStateNormal];
+        [button setBackgroundImage:[HLAlertView imageWithColor:buttonModel.highlightedColor] forState:UIControlStateHighlighted];
+        [button setBackgroundImage:[HLAlertView imageWithColor:buttonModel.disabledColor] forState:UIControlStateDisabled];
         button.layer.cornerRadius  = buttonModel.cornerRadius;
         button.layer.masksToBounds = buttonModel.maskToBounds;
         [hAC.popView addItemToArrayWithObject:object];
@@ -331,7 +331,7 @@ static HLAlertController *hAC = nil;
     [self updateConstraint:orientation];
 }
 - (void)dealloc {
-    NSLog(@"HLAlertController dealloc...");
+    NSLog(@"HLAlertView dealloc...");
 }
 + (UIImage *)imageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);

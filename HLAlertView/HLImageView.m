@@ -1,6 +1,6 @@
 //
 //  HLImageView.m
-//  HLAlertController
+//  HLAlertView
 //
 //  Created by benjaminlmz@qq.com on 2020/5/7.
 //  Copyright © 2020 Tony. All rights reserved.

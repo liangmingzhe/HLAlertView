@@ -1,6 +1,6 @@
 //
-//  HLAlertControllerTests.m
-//  HLAlertControllerTests
+//  HLAlertViewTests.m
+//  HLAlertViewTests
 //
 //  Created by benjaminlmz@qq.com on 2020/4/29.
 //  Copyright © 2020 Tony. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface HLAlertControllerTests : XCTestCase
+@interface HLAlertViewTests : XCTestCase
 
 @end
 
-@implementation HLAlertControllerTests
+@implementation HLAlertViewTests
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.

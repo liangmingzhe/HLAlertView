@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  HLAlertController
+//  HLAlertView
 //
 //  Created by benjaminlmz@qq.com on 2020/4/29.
 //  Copyright © 2020 Tony. All rights reserved.
@@ -65,7 +65,7 @@
 }
 
 - (void)openWeChatAlert {
-     HLAlertController *alert = [HLAlertController alertWithTitle:nil message:nil];
+     HLAlertView *alert = [HLAlertView alertWithTitle:nil message:nil];
 
 
     HLLabel *la = [HLLabel labelWithTitle:@"”蛮牛摄像机”想要打开“微信”" block:^(Constraint * _Nonnull constraint, HLLabelModel * _Nonnull labelModel) {
@@ -78,18 +78,18 @@
     [alert addLabel:la];
 
      HLAction *action2 = [HLAction actionWithTitle:@"取消" handler:^(HLAction * _Nonnull action) {
-         [HLAlertController dismiss];
+         [HLAlertView dismiss];
      }];
      [alert addAciton:action2];
      HLAction *action = [HLAction actionWithTitle:@"打开" handler:^(HLAction * _Nonnull action) {
-         [HLAlertController dismiss];
+         [HLAlertView dismiss];
      }];
      [alert addAciton:action];
      alert.shadowAction = NO;
-     [HLAlertController show];
+     [HLAlertView show];
 }
 - (void)forceLoginOutAlert {
-    HLAlertController *alert = [HLAlertController alertWithTitle:nil message:nil];
+    HLAlertView *alert = [HLAlertView alertWithTitle:nil message:nil];
     
     HLLabel *la = [HLLabel labelWithTitle:@"提示" block:^(Constraint * _Nonnull constraint, HLLabelModel * _Nonnull labelModel) {
         constraint.top = 15;
@@ -109,14 +109,14 @@
     [alert addLabel:la2];
 
     HLAction *action = [HLAction actionWithTitle:@"退出" handler:^(HLAction * _Nonnull action) {
-        [HLAlertController dismiss];
+        [HLAlertView dismiss];
     }];
     [alert addAciton:action];
     alert.shadowAction = NO;
-    [HLAlertController show];
+    [HLAlertView show];
 }
 - (void)encrytionAlert {
-    HLAlertController *alert = [HLAlertController alertWithTitle:nil message:nil];
+    HLAlertView *alert = [HLAlertView alertWithTitle:nil message:nil];
     
     HLLabel *la = [HLLabel labelWithTitle:@"请输入视频图片加密密码" block:^(Constraint * _Nonnull constraint, HLLabelModel * _Nonnull labelModel) {
         constraint.left = 15;
@@ -153,7 +153,7 @@
     [alert addLabel:la2];
     [la2 hide:YES];
     HLAction *action2 = [HLAction actionWithTitle:@"取消" handler:^(HLAction * _Nonnull action) {
-        [HLAlertController dismiss];
+        [HLAlertView dismiss];
     }];
     [alert addAciton:action2];
     HLAction *action = [HLAction actionWithTitle:@"确定" handler:^(HLAction * _Nonnull action) {
@@ -161,12 +161,12 @@
     }];
     [alert addAciton:action];
     alert.shadowAction = NO;
-    [HLAlertController show];
+    [HLAlertView show];
 }
 
 //视频加密提示框
 - (void)encrytionTipsAlert {
-    HLAlertController *alert = [HLAlertController alertWithTitle:nil message:nil];
+    HLAlertView *alert = [HLAlertView alertWithTitle:nil message:nil];
     
     
     HLLabel *la = [HLLabel labelWithTitle:@"视频加密" block:^(Constraint * _Nonnull constraint, HLLabelModel * _Nonnull labelModel) {
@@ -213,12 +213,12 @@
     [alert addButton:hlButton];
     [alert alertSize:CGSizeMake(300, 360)];
     alert.shadowAction = YES;
-    [HLAlertController show];
+    [HLAlertView show];
 }
 
 //更新弹框
 - (void)upgradeAppAlert {
-    HLAlertController *alert = [HLAlertController alertWithTitle:nil message:nil];
+    HLAlertView *alert = [HLAlertView alertWithTitle:nil message:nil];
     
     HLImageView *imagev = [HLImageView imageViewWithImage:[UIImage imageNamed:@"set_firmware_img_upgrade"] block:^(Constraint * _Nonnull constraint, HLImageViewModel * _Nonnull imageModel) {
         constraint.top = 0;
@@ -253,23 +253,23 @@
     [alert addLabel:lax];
    
     HLAction *action2 = [HLAction actionWithTitle:@"拒绝" handler:^(HLAction * _Nonnull action) {
-        [HLAlertController dismiss];
+        [HLAlertView dismiss];
     }];
     [alert addAciton:action2];
     HLAction *action = [HLAction actionWithTitle:@"立即更新" handler:^(HLAction * _Nonnull action) {
-        [HLAlertController dismiss];
+        [HLAlertView dismiss];
     }];
     [alert addAciton:action];
 
     HLAction *action3 = [HLAction actionWithTitle:@"更新" handler:^(HLAction * _Nonnull action) {
-        [HLAlertController dismiss];
+        [HLAlertView dismiss];
     }];
     [alert addAciton:action3];
     alert.shadowAction = NO;
     [alert alertSize:CGSizeMake(260, 315)];
     
     
-    [HLAlertController show];
+    [HLAlertView show];
     
     
 }
@@ -277,7 +277,7 @@
 
 
 - (void)alert {
-    HLAlertController *alert = [HLAlertController alertWithTitle:@"测试" message:nil];
+    HLAlertView *alert = [HLAlertView alertWithTitle:@"测试" message:nil];
     NSString *title = @"测试测试测试测试测试测试测试测试 测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试";
     HMLabel *lav = [HMLabel labelWithTitle:title block:^(Constraint * _Nonnull constraint, HLTextModel * _Nonnull textModel) {
         constraint.top = 15;
@@ -294,7 +294,7 @@
     [alert addLabel:lav];
     alert.shadowAction = YES;
     
-    [HLAlertController show];
+    [HLAlertView show];
 }
 
 
