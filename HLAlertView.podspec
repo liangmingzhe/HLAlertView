@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "HLAlertView"
   spec.version      = "0.0.1"
-  spec.summary      = "A short description of HLAlertView."
+  spec.summary      = "HLAlertView"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,9 +25,10 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
+			HLAlertView is a very useful alert view widget. It can help you create many complex view style fastly
                    DESC
 
-  spec.homepage     = "http://EXAMPLE/HLAlertView"
+  spec.homepage     = "https://github.com/liangmingzhe/HLAlertView"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -38,7 +39,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT (example)"
+  spec.license      = "MIT"
   # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -79,7 +80,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "http://EXAMPLE/HLAlertView.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/liangmingzhe/HLAlertView.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,11 +91,11 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Classes", "Classes/**/*.{h,m}"
-  spec.exclude_files = "Classes/Exclude"
+  spec.source_files  = "HLAlertView", "HLAlertView/**/*.{h,m}"
+  spec.exclude_files = "HLAlertView/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
-
+  spec.frameworks  = "UIKit","AVFoundation","Foundation".
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
