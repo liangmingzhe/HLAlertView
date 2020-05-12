@@ -159,7 +159,7 @@
 
 - (CGFloat)getCurrentHeight {
     UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-    if (orientation == UIDeviceOrientationPortrait) {
+    if (orientation == UIDeviceOrientationPortrait || orientation == UIDeviceOrientationUnknown || orientation == UIDeviceOrientationPortraitUpsideDown) {
         return _height;
     }else {
         if (_height > self.frame.size.width) {

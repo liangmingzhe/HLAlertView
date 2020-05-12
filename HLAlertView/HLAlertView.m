@@ -231,27 +231,16 @@ static HLAlertView *hAC = nil;
                                                                 constant:0];
     [hAC addConstraints:@[centerX,hAC.centerY]];
     
-    if (orientation != UIDeviceOrientationPortrait && orientation != UIDeviceOrientationUnknown) {
-        [hAC.popView removeConstraint:hAC.popViewHeightConstraint];
-        hAC.popViewHeightConstraint = [NSLayoutConstraint constraintWithItem:hAC.popView
-                                                                      attribute:NSLayoutAttributeHeight
-                                                                      relatedBy:NSLayoutRelationEqual
-                                                                         toItem:nil
-                                                                      attribute:NSLayoutAttributeHeight
-                                                                     multiplier:1
-                                                                       constant:[hAC.popView getCurrentHeight]];
-        [hAC.popView addConstraint:hAC.popViewHeightConstraint];
-    }else {
-        [hAC.popView removeConstraint:hAC.popViewHeightConstraint];
-        hAC.popViewHeightConstraint = [NSLayoutConstraint constraintWithItem:hAC.popView
-                                                                      attribute:NSLayoutAttributeHeight
-                                                                      relatedBy:NSLayoutRelationEqual
-                                                                         toItem:nil
-                                                                      attribute:NSLayoutAttributeHeight
-                                                                     multiplier:1
-                                                                       constant:[hAC.popView getCurrentHeight]];
-        [hAC.popView addConstraint:hAC.popViewHeightConstraint];
-    }
+    
+    [hAC.popView removeConstraint:hAC.popViewHeightConstraint];
+    hAC.popViewHeightConstraint = [NSLayoutConstraint constraintWithItem:hAC.popView
+                                                                  attribute:NSLayoutAttributeHeight
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:nil
+                                                                  attribute:NSLayoutAttributeHeight
+                                                                 multiplier:1
+                                                                   constant:[hAC.popView getCurrentHeight]];
+    [hAC.popView addConstraint:hAC.popViewHeightConstraint];
 }
 
 //重新设置弹框宽高
