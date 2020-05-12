@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HMLabel : NSObject
+@property (nonatomic,copy, readonly)NSString *title;
 + (instancetype)labelWithTitle:(NSString *)title block:(void(^)(Constraint *constraint,HLTextModel *textModel))block;
 @end
 

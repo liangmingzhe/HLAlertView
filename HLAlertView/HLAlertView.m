@@ -161,7 +161,8 @@ static HLAlertView *hAC = nil;
 //约束
 - (void)updateConstraint:(UIDeviceOrientation)orientation {
     [hAC setTranslatesAutoresizingMaskIntoConstraints:NO];
-    //北京约束
+
+    //背景约束
     NSLayoutConstraint *cWidth1 = [NSLayoutConstraint  constraintWithItem:hAC
                                                                 attribute:NSLayoutAttributeWidth
                                                                 relatedBy:NSLayoutRelationEqual
@@ -230,7 +231,7 @@ static HLAlertView *hAC = nil;
                                                                 constant:0];
     [hAC addConstraints:@[centerX,hAC.centerY]];
     
-    if (orientation != UIDeviceOrientationPortrait) {
+    if (orientation != UIDeviceOrientationPortrait && orientation != UIDeviceOrientationUnknown) {
         [hAC.popView removeConstraint:hAC.popViewHeightConstraint];
         hAC.popViewHeightConstraint = [NSLayoutConstraint constraintWithItem:hAC.popView
                                                                       attribute:NSLayoutAttributeHeight
@@ -272,17 +273,20 @@ static HLAlertView *hAC = nil;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    [UIView animateWithDuration:2 animations:^{
-        [hAC removeConstraint:hAC.centerY];
+    [hAC removeConstraint:hAC.centerY];
+    [UIView animateWithDuration:0.5 animations:^{
         hAC.mul = 1;
-        hAC.centerY = [NSLayoutConstraint constraintWithItem:hAC.popView attribute:NSLayoutAttributeCenterY
-                                                   relatedBy:NSLayoutRelationEqual
-                                                      toItem:hAC
-                                                   attribute:NSLayoutAttributeCenterY
-                                                  multiplier:1.0 * hAC.mul
-                                                    constant:0];
-        [hAC addConstraints:@[hAC.centerY]];
+//        hAC.centerY = [NSLayoutConstraint constraintWithItem:hAC.popView attribute:NSLayoutAttributeCenterY
+//                                                   relatedBy:NSLayoutRelationEqual
+//                                                      toItem:hAC
+//                                                   attribute:NSLayoutAttributeCenterY
+//                                                  multiplier:1.0 * hAC.mul
+//                                                    constant:0];
+//        [hAC addConstraints:@[hAC.centerY]];
+//
+        [hAC.popView setCenter:CGPointMake(kWidth /2, kHeight/2)];
     }];
+    
 }
 
 

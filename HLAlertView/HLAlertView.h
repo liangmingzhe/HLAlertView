@@ -22,14 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (id)alertWithTitle:(nullable NSString *)title message:(nullable NSString *)message;
 + (void)show;
 + (void)dismiss;
-
 - (void)addLabel:(id)label;
 - (void)addAciton:(HLAction *)action;
 
 - (void)addButton:(id)object;
 - (void)addImageView:(HLImageView *)imageView;
 - (void)addTextFieldWithConfigurationHandler:(void (^ __nullable)(HLTextField *textField))configurationHandler;
-
 
 - (void)alertSize:(CGSize)size;
 @property (nonatomic, readonly) NSArray<HLAction *> *actions;

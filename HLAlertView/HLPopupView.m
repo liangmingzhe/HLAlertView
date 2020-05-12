@@ -9,13 +9,13 @@
 #import "HLPopupView.h"
 #import "HLAlertView.h"
 
-#define systemBasictWidth    270
+
 
 @interface HLPopupView()
 @property (nonatomic ,strong) UIStackView *actionStackView;
 @property(nonatomic ,strong) NSMutableArray *itemArray;
 @property(nonatomic ,assign) CGFloat fixHeight;
-
+@property(nonatomic ,assign) CGFloat basicWidth;
 @property(nonatomic ,assign) CGFloat height;
 
 
@@ -24,7 +24,8 @@
 - (id)init {
     self = [super init];
     if (self) {
-        self.frame = CGRectMake(0, 0, systemBasictWidth, self.height);
+        self.basicWidth = 270;
+        self.frame = CGRectMake(0, 0, self.basicWidth, self.height);
     }
     return self;
 }
@@ -89,12 +90,20 @@
         if ([obj isMemberOfClass:[HLLabel class]]) {
             HLLabel *item = obj;
             Constraint *model = [item valueForKey:@"constraint"];
-            self.height = self.height + model.height + model.top;
+            if (model.autoRelation == YES) {
+                self.height = self.height + model.height + model.top + model.bottom;
+            }
         }
         else if ([obj isMemberOfClass:[HMLabel class]]) {
             HMLabel *item = obj;
             Constraint *model = [item valueForKey:@"constraint"];
-            self.height = self.height + model.height + model.top;
+            UITextView *textView = [item valueForKey:@"textView"];
+            if (model.height == 0) {
+                model.height = [HLPopupView getHightWithText:item.title andWidth:self.basicWidth withFontOfSize:textView.font.pointSize];
+            }
+            if (model.autoRelation == YES) {
+                self.height = self.height + model.height + model.top + model.bottom;
+            }
         }
         else if ([obj isMemberOfClass:[HLAction class]]) {
             isHaveAction = YES;
@@ -104,20 +113,19 @@
         }else if ([obj isMemberOfClass:[HLButton class]]) {
             HLButton *item = obj;
             Constraint *model = [item valueForKey:@"constraint"];
-            self.height = self.height + model.height + model.top;
+            if (model.autoRelation == YES) {
+                self.height = self.height + model.height + model.top + model.bottom;
+            }
         }
         else if ([obj isMemberOfClass:[HLImageView class]]) {
             HLImageView *item = obj;
             Constraint *model = [item valueForKey:@"constraint"];
-            self.height = self.height + model.height + model.top;
+            if (model.autoRelation == YES) {
+                self.height = self.height + model.height + model.top + model.bottom;
+            }
         }
         if (obj == [_itemArray lastObject]) {
-            if (isHaveAction == NO) {
-                //遍历到最后一组 如果没有Action 高度扩展 30
-                self.height = self.height + 30;
-            }else {
-                //遍历到最后一组 如果没有Action 高度扩展 10 以避免最后插入的View 与Action上下k间距太靠近
-                self.height = self.height + 10;
+            if (isHaveAction == YES) {
                 NSInteger actionAccount = _actionStackView.arrangedSubviews.count;
                 if (actionAccount <= 2) {
                     _height = _height + 50;
@@ -138,6 +146,7 @@
 
 - (void)fixSize:(CGSize)size {
     self.fixHeight = size.height;
+    self.basicWidth = size.width;
     if (_height >= self.fixHeight) {
         self.fixHeight = _height;
         [self setFrame:CGRectMake(0, 0, size.width, _height)];

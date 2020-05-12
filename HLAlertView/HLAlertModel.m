@@ -116,7 +116,7 @@
     self = [super init];
     if (self) {
         _top = 15.0f;
-        _bottom  = 15.0f;
+        _bottom  = 0.0f;
         _left = -15.0f;
         _right = 0.0f;
         _autoRelation = YES;

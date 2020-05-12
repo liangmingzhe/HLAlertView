@@ -69,8 +69,8 @@
 
 
     HLLabel *la = [HLLabel labelWithTitle:@"”蛮牛摄像机”想要打开“微信”" block:^(Constraint * _Nonnull constraint, HLLabelModel * _Nonnull labelModel) {
-        constraint.top = 15;
-        constraint.bottom = 40;
+        constraint.top = 20;
+        constraint.bottom = 20;
         constraint.height = 30;
         labelModel.textFont = [UIFont fontWithName:@"STXihei" size:13];
     }];
@@ -103,6 +103,7 @@
         constraint.height = 40;
         constraint.left = 15;
         constraint.right = -15;
+        constraint.bottom = 15;
         labelModel.textAlignment = NSTextAlignmentLeft;
         labelModel.textFont = [UIFont fontWithName:@"PingFang-SC-Regular" size:14];
     }];
@@ -186,10 +187,10 @@
         constraint.left = 15.5;
         constraint.right = -15.5;
         constraint.height = 190;
-        
         textModel.textFont = [UIFont systemFontOfSize:15];
         textModel.textColor = [UIColor orangeColor];
         textModel.textAlignment = NSTextAlignmentLeft;
+        textModel.scrollEnable = YES;
     }];
     [alert addLabel:lav];
       
@@ -198,7 +199,7 @@
         constraint.left = 30;
         constraint.right = -30;
         constraint.height = 40;
-        constraint.bottom = 30;
+        constraint.bottom = 0;
         
         buttonModel.textColor = [UIColor whiteColor];
         buttonModel.normalColor = [UIColor colorWithRed:73.0f/255.0f green:166.0f/255.0f blue:246.0f/255.0f alpha:1.0f];
@@ -211,7 +212,7 @@
     }];
     
     [alert addButton:hlButton];
-    [alert alertSize:CGSizeMake(300, 360)];
+
     alert.shadowAction = YES;
     [HLAlertView show];
 }
@@ -265,7 +266,7 @@
     }];
     [alert addAciton:action3];
     alert.shadowAction = NO;
-    [alert alertSize:CGSizeMake(260, 315)];
+//    [alert alertSize:CGSizeMake(260, 315)];
     
     
     [HLAlertView show];

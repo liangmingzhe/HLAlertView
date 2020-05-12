@@ -29,19 +29,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface HLLabelModel : NSObject
-@property (nonatomic,copy)  UIFont *textFont;
-@property (nonatomic,assign) NSTextAlignment textAlignment;
-@property (nonatomic,copy) UIColor *textColor;
-@property (nonatomic,copy) UIColor *backgroundColor;
-@property (nonatomic,assign) CGFloat cornerRadius;
-@property (nonatomic,assign) BOOL maskToBounds;
+@property (nonatomic,copy)  UIFont              *textFont;
+@property (nonatomic,assign) NSTextAlignment    textAlignment;
+@property (nonatomic,copy) UIColor              *textColor;
+@property (nonatomic,copy) UIColor              *backgroundColor;
+@property (nonatomic,assign) CGFloat            cornerRadius;
+@property (nonatomic,assign) BOOL               maskToBounds;
 
 @end
 
-
 @interface HMLabelModel : NSObject
-
-
 //:label
 @property (nonatomic,assign)CGFloat leftBorder;
 @property (nonatomic,assign)CGFloat rightBorder;
@@ -61,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign)CGFloat topBorder;
 @property (nonatomic,assign)CGFloat height;
 @property (nonatomic,assign) CGFloat cornerRadius;
-@property (nonatomic,assign) BOOL maskToBounds;
+@property (nonatomic,assign) BOOL   maskToBounds;
 @end
 
 @interface HLActionModel : NSObject

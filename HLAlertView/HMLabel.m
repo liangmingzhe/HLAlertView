@@ -30,6 +30,7 @@
     }
     HMLabel *object = [[HMLabel alloc] init];
     object.textView.text = title;
+    object.title = title;
     object.textView.editable = NO;
     object.textView.selectable = NO;
     object.textView.showsVerticalScrollIndicator = NO;
@@ -40,7 +41,10 @@
 }
 
 
-
+- (void)setTitle:(NSString * _Nonnull)title {
+    self.textView.text = title;
+    _title = title;
+}
 
 
 //获取文字高度
