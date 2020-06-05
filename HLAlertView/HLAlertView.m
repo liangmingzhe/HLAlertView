@@ -13,7 +13,7 @@
 #define kHeight [UIScreen mainScreen].bounds.size.height
 
 #define kBKTag 101001
-@interface HLAlertView ()<UITextFieldDelegate>
+@interface HLAlertView ()<UITextFieldDelegate,HLTextFieldDelegate>
 @property (nonatomic ,strong) HLPopupView *popView;
 
 @property (nonatomic ,strong) NSMutableArray *actionArray;
@@ -86,6 +86,8 @@ static HLAlertView *hAC = nil;
     [hAC appendToActions:action];
 }
 
+
+
 - (void)addButton:(id)object {
     if (object != nil && [object isMemberOfClass:[HLButton class]]) {
         HLButtonModel *buttonModel = [object valueForKey:@"buttonModel"];
@@ -100,12 +102,26 @@ static HLAlertView *hAC = nil;
     }
 }
 
+- (void)addTextField:(id)object {
+    
+    if (object != nil && [object isMemberOfClass:[HLTextField class]]) {
+        HLTextField *tex = object;
+        tex.delegate = hAC;
+        HLTextModel *textModel = [object valueForKey:@"textModel"];
+        UITextField *textField = [object valueForKey:@"textField"];
+        textField.backgroundColor = textModel.backgroundColor;
+        textField.borderStyle = textModel.borderStyle;
+        [hAC appendToLabels:object];
+        [hAC.textFieldArray addObject:object];
+    }
+}
+
 - (void)addImageView:(HLImageView *)imageView {
     [hAC appendToImageView:imageView];
 }
 
 - (void)appendToLabels:(id)label {
-    if (label != nil && ([label isMemberOfClass:[HLLabel class]] || [label isMemberOfClass:[HMLabel class]])) {
+    if (label != nil && ([label isMemberOfClass:[HLLabel class]] || [label isMemberOfClass:[HMLabel class]] || [label isMemberOfClass:[HLTextField class]])) {
         // HQLabel 字体格式设置
         if ([label isMemberOfClass:[HMLabel class]] == YES) {
             HMLabel *obj = label;
@@ -129,6 +145,17 @@ static HLAlertView *hAC = nil;
             label.backgroundColor = labelModel.backgroundColor;
             label.layer.cornerRadius = labelModel.cornerRadius;
             label.layer.masksToBounds = YES;
+        }else if ([label isMemberOfClass:[HLTextField class]] == YES){
+            HLTextField *obj = label;
+            UITextField *textField = [obj valueForKey:@"textField"];
+            HLTextModel *textModel = [obj valueForKey:@"textModel"];
+            textField.font = textModel.textFont;
+                        
+            textField.textAlignment = textModel.textAlignment;
+            
+            textField.textColor = textModel.textColor;
+            
+            textField.layer.masksToBounds = YES;
         }
         [hAC.labelArray addObject:label];
         [hAC.popView addItemToArrayWithObject:label];
@@ -151,13 +178,6 @@ static HLAlertView *hAC = nil;
     }
 }
 
-- (void)addTextFieldWithConfigurationHandler:(void (^ __nullable)(HLTextField *textField))configurationHandler {
-    HLTextField *tf = [[HLTextField alloc] init];
-    tf.delegate = hAC;
-    [hAC.textFieldArray addObject:tf];
-    [hAC.popView addItemToArrayWithObject:tf];
-    configurationHandler(tf);
-}
 //约束
 - (void)updateConstraint:(UIDeviceOrientation)orientation {
     [hAC setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -248,37 +268,6 @@ static HLAlertView *hAC = nil;
     [hAC.popView fixSize:size];
 }
 
-// textField delegate
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    [hAC removeConstraint:hAC.centerY];
-    hAC.mul = 0.7;
-    hAC.centerY = [NSLayoutConstraint constraintWithItem:hAC.popView attribute:NSLayoutAttributeCenterY
-        relatedBy:NSLayoutRelationEqual
-           toItem:hAC
-        attribute:NSLayoutAttributeCenterY
-       multiplier:1.0 * hAC.mul
-         constant:0];
-    [hAC addConstraints:@[hAC.centerY]];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    [hAC removeConstraint:hAC.centerY];
-    [UIView animateWithDuration:0.5 animations:^{
-        hAC.mul = 1;
-//        hAC.centerY = [NSLayoutConstraint constraintWithItem:hAC.popView attribute:NSLayoutAttributeCenterY
-//                                                   relatedBy:NSLayoutRelationEqual
-//                                                      toItem:hAC
-//                                                   attribute:NSLayoutAttributeCenterY
-//                                                  multiplier:1.0 * hAC.mul
-//                                                    constant:0];
-//        [hAC addConstraints:@[hAC.centerY]];
-//
-        [hAC.popView setCenter:CGPointMake(kWidth /2, kHeight/2)];
-    }];
-    
-}
-
-
 //展示
 + (void)show {
     UIView *oldView = [[[[UIApplication sharedApplication] windows] firstObject] viewWithTag:kBKTag];
@@ -295,8 +284,8 @@ static HLAlertView *hAC = nil;
         hAC.popView.alpha = 1;
     }];
     if (hAC.textFieldArray.count != 0) {
-        UITextField * tf = [hAC.textFieldArray firstObject];
-        [tf becomeFirstResponder];
+        UITextField *textField = [[hAC.textFieldArray firstObject] valueForKey:@"textField"];
+        [textField becomeFirstResponder];
     }
 }
 
@@ -315,8 +304,9 @@ static HLAlertView *hAC = nil;
     }
     
     [self.textFieldArray enumerateObjectsUsingBlock:^(HLTextField* _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-               [obj resignFirstResponder];
-           }];
+        UITextField *textField = [obj valueForKey:@"textField"];
+               [textField resignFirstResponder];
+    }];
 }
 
 - (void)statusBarOrientationChange:(NSNotification *)notification {
@@ -336,4 +326,25 @@ static HLAlertView *hAC = nil;
     UIGraphicsEndImageContext();
     return image;
 }
+
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    [hAC removeConstraint:hAC.centerY];
+    hAC.mul = 0.7;
+    hAC.centerY = [NSLayoutConstraint constraintWithItem:hAC.popView attribute:NSLayoutAttributeCenterY
+        relatedBy:NSLayoutRelationEqual
+           toItem:hAC
+        attribute:NSLayoutAttributeCenterY
+       multiplier:1.0 * hAC.mul
+         constant:0];
+    [hAC addConstraints:@[hAC.centerY]];
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [hAC removeConstraint:hAC.centerY];
+    [UIView animateWithDuration:0.5 animations:^{
+        hAC.mul = 1;
+        [hAC.popView setCenter:CGPointMake(kWidth /2, kHeight/2)];
+    }];
+}
+
 @end

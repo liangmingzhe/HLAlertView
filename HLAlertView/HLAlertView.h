@@ -14,6 +14,8 @@
 #import "HLImageView.h"
 #import "HLButton.h"
 #import "HMLabel.h"
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HLAlertView : UIView
@@ -27,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)addButton:(id)object;
 - (void)addImageView:(HLImageView *)imageView;
-- (void)addTextFieldWithConfigurationHandler:(void (^ __nullable)(HLTextField *textField))configurationHandler;
+- (void)addTextField:(id)object;
 
 - (void)alertSize:(CGSize)size;
 @property (nonatomic, readonly) NSArray<HLAction *> *actions;

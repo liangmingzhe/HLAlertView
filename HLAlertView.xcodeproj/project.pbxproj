@@ -21,6 +21,7 @@
 		EE6CB7942462B3EC00B903B0 /* HLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6CB7932462B3EC00B903B0 /* HLTextField.m */; };
 		EE70C1382463ECC8004C2420 /* HLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE70C1372463ECC8004C2420 /* HLImageView.m */; };
 		EE70C1402463EF85004C2420 /* HLAlertModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE70C13E2463EF85004C2420 /* HLAlertModel.m */; };
+		EE810DE624752D9600E34740 /* HLAlertViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EE810DE524752D9600E34740 /* HLAlertViewAnimation.m */; };
 		EEBED70C24656849007E7F2C /* HLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EEBED70B24656849007E7F2C /* HLButton.m */; };
 		EEBED72E246640DA007E7F2C /* HMLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EEBED72D246640DA007E7F2C /* HMLabel.m */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,8 @@
 		EE70C1372463ECC8004C2420 /* HLImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLImageView.m; sourceTree = "<group>"; };
 		EE70C13E2463EF85004C2420 /* HLAlertModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLAlertModel.m; sourceTree = "<group>"; };
 		EE70C13F2463EF85004C2420 /* HLAlertModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLAlertModel.h; sourceTree = "<group>"; };
+		EE810DE424752D9600E34740 /* HLAlertViewAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLAlertViewAnimation.h; sourceTree = "<group>"; };
+		EE810DE524752D9600E34740 /* HLAlertViewAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLAlertViewAnimation.m; sourceTree = "<group>"; };
 		EEBED70A24656849007E7F2C /* HLButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLButton.h; sourceTree = "<group>"; };
 		EEBED70B24656849007E7F2C /* HLButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLButton.m; sourceTree = "<group>"; };
 		EEBED72C246640DA007E7F2C /* HMLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMLabel.h; sourceTree = "<group>"; };
@@ -157,13 +160,25 @@
 			path = HLAlertViewUITests;
 			sourceTree = "<group>";
 		};
+		EE810DE324752D8000E34740 /* HLAlertViewAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				EE810DE424752D9600E34740 /* HLAlertViewAnimation.h */,
+				EE810DE524752D9600E34740 /* HLAlertViewAnimation.m */,
+			);
+			path = HLAlertViewAnimation;
+			sourceTree = "<group>";
+		};
 		EEBED7BD2468EC86007E7F2C /* HLAlertView */ = {
 			isa = PBXGroup;
 			children = (
+				EE810DE324752D8000E34740 /* HLAlertViewAnimation */,
 				EE70C13F2463EF85004C2420 /* HLAlertModel.h */,
 				EE70C13E2463EF85004C2420 /* HLAlertModel.m */,
 				EE6CB7922462B3EC00B903B0 /* HLTextField.h */,
 				EE6CB7932462B3EC00B903B0 /* HLTextField.m */,
+				EEBED72C246640DA007E7F2C /* HMLabel.h */,
+				EEBED72D246640DA007E7F2C /* HMLabel.m */,
 				A509910B245FFF5400BB93C4 /* HLAction.h */,
 				A509910C245FFF5400BB93C4 /* HLAction.m */,
 				EEBED70A24656849007E7F2C /* HLButton.h */,
@@ -172,8 +187,6 @@
 				A509910F245FFF7B00BB93C4 /* HLLabel.m */,
 				EE70C1362463ECC8004C2420 /* HLImageView.h */,
 				EE70C1372463ECC8004C2420 /* HLImageView.m */,
-				EEBED72C246640DA007E7F2C /* HMLabel.h */,
-				EEBED72D246640DA007E7F2C /* HMLabel.m */,
 				A511958C245C46B800D7AF00 /* HLPopupView.h */,
 				A511958D245C46B800D7AF00 /* HLPopupView.m */,
 				EE4D75452459820C004C7062 /* HLAlertView.h */,
@@ -319,6 +332,7 @@
 				EEBED70C24656849007E7F2C /* HLButton.m in Sources */,
 				EE4D75472459820C004C7062 /* HLAlertView.m in Sources */,
 				EE4D7512245981D2004C7062 /* AppDelegate.m in Sources */,
+				EE810DE624752D9600E34740 /* HLAlertViewAnimation.m in Sources */,
 				EE70C1382463ECC8004C2420 /* HLImageView.m in Sources */,
 				EE4D7523245981D6004C7062 /* main.m in Sources */,
 				A509910D245FFF5400BB93C4 /* HLAction.m in Sources */,

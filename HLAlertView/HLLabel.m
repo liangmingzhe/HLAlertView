@@ -38,7 +38,7 @@
     object.label.numberOfLines = 0;
     object.label.font = [UIFont systemFontOfSize:13.0f];
     object.label.textAlignment = NSTextAlignmentCenter;
-    [object.label setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [object.label setTranslatesAutoresizingMaskIntoConstraints:NO]; //AutoLayOut 必须加这句不然无法生效
     block(object.constraint,object.labelModel);
     
     return object;

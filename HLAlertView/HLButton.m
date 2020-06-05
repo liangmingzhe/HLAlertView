@@ -41,7 +41,8 @@
 }
 
 - (void)clicked:(HLButton *)sender {
-    self.hander(self);
+    __weak typeof(self) weakSelf = self;
+    self.hander(weakSelf);
 }
 
 

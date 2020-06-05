@@ -11,8 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HLAlertModel : NSObject
-
-
 //:label
 @property (nonatomic,assign)CGFloat leftBorder;
 @property (nonatomic,assign)CGFloat rightBorder;
@@ -107,5 +105,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign)    CGFloat         cornerRadius;
 @property (nonatomic,assign)    BOOL            maskToBounds;
 @property (nonatomic,assign)    BOOL            scrollEnable;
+@property (nonatomic,assign)    UITextBorderStyle  borderStyle;
 @end
 NS_ASSUME_NONNULL_END

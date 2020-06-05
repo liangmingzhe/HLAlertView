@@ -45,7 +45,8 @@
 }
 
 - (void)clicked:(HLAction *)sender {
-    sender.hander(sender);
+    __weak typeof(sender) weakSelf = sender;
+    sender.hander(weakSelf);
 }
 
 

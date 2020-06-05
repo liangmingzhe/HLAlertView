@@ -10,9 +10,6 @@
 #import "HLAlertView.h"
 
 @interface ViewController ()
-{
-    HMLabel *hMLable;
-}
 @end
 
 @implementation ViewController
@@ -136,11 +133,24 @@
         labelModel.textFont = [UIFont fontWithName:@"PingFang-SC-Regular" size:14];
     }];
     [alert addLabel:la1];
-      
-    [alert addTextFieldWithConfigurationHandler:^(HLTextField * _Nonnull textField) {
-        textField.secureTextEntry = YES;
+    
+    HLTextField *ltextField = [HLTextField textFieldWithBlock:^(Constraint * _Nonnull constraint, HLTextModel * _Nonnull textModel) {
+        constraint.top = 15;
+        constraint.bottom = 0;
+        constraint.left = 15.5;
+        constraint.right = -15.5;
+        constraint.height = 30;
+        textModel.textFont = [UIFont systemFontOfSize:15];
+        textModel.textColor = [UIColor blackColor];
+        textModel.textAlignment = NSTextAlignmentLeft;
+        textModel.scrollEnable = YES;
+    } handler:^(HLTextField * _Nonnull action,NSString *text, TextEditState textFieldState) {
+        if (textFieldState == TextEditDidChangeSelection) {
+            NSLog(@"");
+        }
     }];
-
+    [alert addTextField:ltextField];
+    
     HLLabel *la2 = [HLLabel labelWithTitle:@"输入验证码不正确" block:^(Constraint * _Nonnull constraint, HLLabelModel * _Nonnull labelModel) {
         constraint.top = 5;
         constraint.left = 15;

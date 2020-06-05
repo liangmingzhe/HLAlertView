@@ -105,12 +105,22 @@
                 self.height = self.height + model.height + model.top + model.bottom;
             }
         }
+        else if ([obj isMemberOfClass:[HLTextField class]]) {
+            HLTextField *item = obj;
+            Constraint *model = [item valueForKey:@"constraint"];
+            if (model.height == 0) {
+                model.height = 30;
+            }
+            
+            if (model.autoRelation == YES) {
+               self.height = self.height + model.height + model.top + model.bottom;
+            }
+            
+        }
         else if ([obj isMemberOfClass:[HLAction class]]) {
             isHaveAction = YES;
-        }else if ([obj isMemberOfClass:[HLTextField class]]) {
-            HLTextField *item = obj;
-            self.height = self.height + item.model.height + item.model.topBorder;
-        }else if ([obj isMemberOfClass:[HLButton class]]) {
+        }
+        else if ([obj isMemberOfClass:[HLButton class]]) {
             HLButton *item = obj;
             Constraint *model = [item valueForKey:@"constraint"];
             if (model.autoRelation == YES) {
@@ -233,20 +243,56 @@
             [textView addConstraints:@[cWidth,cHeight]];
             
         } else if ([_itemArray[i] isMemberOfClass:[HLTextField class]]){
-            HLTextField*item = _itemArray[i];
-            [self addSubview:item];
-            bTopBorder = bTopBorder + item.model.topBorder;
-            NSLayoutConstraint *topBorder = [NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:bTopBorder];
-            bTopBorder = bTopBorder + item.model.height;
-            NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1.0 constant:item.model.leftBorder];
-            NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1.0 constant:item.model.rightBorder];
-
-            NSLayoutConstraint *cWidth = [NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:self.frame.size.width - item.model.leftBorder + item.model.rightBorder];
-            NSLayoutConstraint *cHeight = [NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:item.model.height];
+            HLTextField *item = _itemArray[i];
+            Constraint *model = [item valueForKey:@"constraint"];
+            UITextField *textField = [item valueForKey:@"textField"];
+            
+            [self addSubview:textField];
+            bTopBorder = bTopBorder + model.top;
+            NSLayoutConstraint *topBorder = [NSLayoutConstraint constraintWithItem:textField
+                                                                         attribute:NSLayoutAttributeTop
+                                                                         relatedBy:NSLayoutRelationEqual
+                                                                            toItem:self
+                                                                         attribute:NSLayoutAttributeTop
+                                                                        multiplier:1.0
+                                                                          constant:bTopBorder];
+             if (model.autoRelation == YES) {
+                 bTopBorder = bTopBorder + model.height;
+             }
+            
+            NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:textField
+                                                                    attribute:NSLayoutAttributeLeft
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:self
+                                                                    attribute:NSLayoutAttributeLeft
+                                                                   multiplier:1.0
+                                                                     constant:model.left];
+            
+            NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:textField
+                                                                     attribute:NSLayoutAttributeRight
+                                                                     relatedBy:NSLayoutRelationEqual
+                                                                        toItem:self
+                                                                     attribute:NSLayoutAttributeRight
+                                                                    multiplier:1.0
+                                                                      constant:model.right];
             [self addConstraints:@[topBorder,left,right]];
             
+            NSLayoutConstraint *cWidth = [NSLayoutConstraint constraintWithItem:textField attribute:NSLayoutAttributeWidth
+                                                                      relatedBy:NSLayoutRelationEqual
+                                                                         toItem:nil
+                                                                      attribute:NSLayoutAttributeNotAnAttribute
+                                                                     multiplier:1.0
+                                                                       constant:self.frame.size.width - model.left + model.right];
+            
+            NSLayoutConstraint *cHeight = [NSLayoutConstraint constraintWithItem:textField
+                                                                       attribute:NSLayoutAttributeHeight
+                                                                       relatedBy:NSLayoutRelationEqual
+                                                                          toItem:nil
+                                                                       attribute:NSLayoutAttributeNotAnAttribute
+                                                                      multiplier:1.0
+                                                                        constant:model.height];
             NSLog(@"Debug + hac.popview topBorder = %f",topBorder.constant);
-            [_itemArray[i] addConstraints:@[cWidth,cHeight]];
+            [textField addConstraints:@[cWidth,cHeight]];
         }
         else if ([_itemArray[i] isMemberOfClass:[HLImageView class]]){
             HLImageView*item = _itemArray[i];

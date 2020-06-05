@@ -136,6 +136,7 @@
         _backgroundColor = nil;
         _cornerRadius = 0;
         _maskToBounds = YES;
+        _borderStyle = UITextBorderStyleRoundedRect;
     }
     return self;
 }
